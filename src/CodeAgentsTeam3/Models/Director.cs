@@ -21,7 +21,7 @@ namespace CodeAgentsTeam3.Models
 
 
         [Display(Name = "Date Of Birth")]
-        [Range(typeof(DateTime.), "1920,1,1", "2016,12,31")]
+       
         public DateTime DateOfBirth { get; set; }
 
         public string Place { get; set; }

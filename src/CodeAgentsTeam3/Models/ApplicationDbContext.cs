@@ -18,5 +18,9 @@ namespace CodeAgentsTeam3.Models
             // Add your customizations after calling base.OnModelCreating(builder);
         }
         public DbSet<Actress> Actress { get; set; }
+        public DbSet<Director> Director { get; set; }
+        public DbSet<Producer> Producer { get; set; }
+        public DbSet<Cameraman> Cameraman { get; set; }
+        public DbSet<Actor> Actor { get; set; }
     }
 }

@@ -53,83 +53,23 @@
                 <div class="top-nav">
                     <ul class="memenu skyblue">
                         <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="grid">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"  role="button">Profession</a>
-                            <ul class="dropdown-menu">
-                                <li><a asp-controller="Actors" asp-action="Index">Actor</a></li>
-                                <li><a href="#">Actress</a></li>
-                                <li><a href="#">Director</a></li>
-                                <li><a href="#">Cameraman</a></li>
-                                <li><a href="#">Producer</a></li>
-                            </ul>
 
-                            
-                            
-                               
-                            <div class="mepanel">
-                                <div class="row">
-                                    <div class="col1 me-one">
-                                        <h4>About Us.</h4>
-                                        
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Contact.</h4>
-                                        
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Login</h4>
-                                        >
-                                    </div>
-                                </div>
-                            </div>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                               aria-expanded="false">Profession <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a asp-controller="Actors" asp-action="Index">Actor</a></li>
+                                <li><a href="#">Actress </a></li>
+                                <li><a href="#">Producer </a></li>
+                                <li><a href="#">Director </a></li>
+                                <li><a href="#">Cameraman </a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Others</a></li>
+                            </ul>
                         </li>
-                        
-                        <li class="grid">
-                            <a asp-controller="Home" asp-action="About">About Us</a>
-                            <div class="mepanel">
-                                <div class="row">
-                                    <div class="col1 me-one">
-                                        <h4>About Us.</h4>
-                                        <ul>
-                                            <li><a href="product.html">New Arrivals</a></li>
-                                            <li><a href="product.html">Home</a></li>
-                                            <li><a href="product.html">Decorates</a></li>
-                                            <li><a href="product.html">Accessories</a></li>
-                                            <li><a href="product.html">Kids</a></li>
-                                            <li><a href="product.html">Login</a></li>
-                                            <li><a href="product.html">Brands</a></li>
-                                            <li><a href="product.html">My Shopping Bag</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Contact</h4>
-                                        <ul>
-                                            <li><a href="product.html">Diwali Lights</a></li>
-                                            <li><a href="product.html">Tube Lights</a></li>
-                                            <li><a href="product.html">Bulbs</a></li>
-                                            <li><a href="product.html">Ceiling Lights</a></li>
-                                            <li><a href="product.html">Accessories</a></li>
-                                            <li><a href="product.html">Lanterns</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Popular Brands</h4>
-                                        <ul>
-                                            <li><a href="product.html">Everyday</a></li>
-                                            <li><a href="product.html">Philips</a></li>
-                                            <li><a href="product.html">Havells</a></li>
-                                            <li><a href="product.html">Wipro</a></li>
-                                            <li><a href="product.html">Jaguar</a></li>
-                                            <li><a href="product.html">Ave</a></li>
-                                            <li><a href="product.html">Gold Medal</a></li>
-                                            <li><a href="product.html">Anchor</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                       <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+     
+                        <li class="grid"><a asp-controller="Home" asp-action="About">About Us</a></li>
+                        <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                         <li class="grid"><a href="contact.html">Login</a></li>
                     </ul>
                 </div>

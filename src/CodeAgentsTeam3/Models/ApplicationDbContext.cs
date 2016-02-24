@@ -22,5 +22,6 @@ namespace CodeAgentsTeam3.Models
         public DbSet<Producer> Producer { get; set; }
         public DbSet<Cameraman> Cameraman { get; set; }
         public DbSet<Actor> Actor { get; set; }
+        public DbSet<Location> Locations { get; set; }
     }
 }

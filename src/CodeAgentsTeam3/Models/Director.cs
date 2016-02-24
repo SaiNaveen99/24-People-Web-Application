@@ -9,14 +9,16 @@ namespace CodeAgentsTeam3.Models
 {
     public class Director
     {
-
         [ScaffoldColumn(false)]
+        [Key]
+        public int DirectorID { get; set; }
+
+        
         [Display(Name = "Last Name")]
         [Required]
         public string LastName { get; set; }
 
         [Required]
-        [ScaffoldColumn(false)]
         [Display(Name = "First Name")]
         public string FirstdName { get; set; }
 

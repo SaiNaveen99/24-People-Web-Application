@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
@@ -16,86 +13,66 @@ namespace CodeAgentsTeam3.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0-beta8")
+                .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Actor", b =>
                 {
-                    b.Property<string>("Id");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
-
-                    b.Property<string>("Name")
-                        .HasAnnotation("MaxLength", 256);
-
-                    b.Property<string>("NormalizedName")
-                        .HasAnnotation("MaxLength", 256);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .HasAnnotation("Relational:Name", "RoleNameIndex");
-
-                    b.HasAnnotation("Relational:TableName", "AspNetRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
+                    b.Property<int>("ActorID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClaimType");
+                    b.Property<string>("Achievements");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<string>("DateOfBirth");
 
-                    b.Property<string>("RoleId");
+                    b.Property<string>("FirstName");
 
-                    b.HasKey("Id");
+                    b.Property<int>("Height");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetRoleClaims");
+                    b.Property<string>("Languages");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<int>("LocationID");
+
+                    b.Property<int>("NumberOfMovies");
+
+                    b.Property<string>("Qualification");
+
+                    b.Property<int>("Rating");
+
+                    b.Property<double>("Remuneration");
+
+                    b.Property<double>("Weight");
+
+                    b.Property<int>("YearsOfExperience");
+
+                    b.HasKey("ActorID");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Actress", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ActressID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ClaimType");
+                    b.Property<string>("Achievements");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<DateTime>("DateOfBirth");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("EducationQualification");
 
-                    b.HasKey("Id");
+                    b.Property<string>("FirstdName");
 
-                    b.HasAnnotation("Relational:TableName", "AspNetUserClaims");
-                });
+                    b.Property<string>("Language");
 
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
-                {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LastName")
+                        .IsRequired();
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("Place");
 
-                    b.Property<string>("ProviderDisplayName");
+                    b.Property<string>("Remuneration");
 
-                    b.Property<string>("UserId");
-
-                    b.HasKey("LoginProvider", "ProviderKey");
-
-                    b.HasAnnotation("Relational:TableName", "AspNetUserLogins");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId");
-
-                    b.Property<string>("RoleId");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
+                    b.HasKey("ActressID");
                 });
 
             modelBuilder.Entity("CodeAgentsTeam3.Models.ApplicationUser", b =>
@@ -144,6 +121,206 @@ namespace CodeAgentsTeam3.Migrations
                         .HasAnnotation("Relational:Name", "UserNameIndex");
 
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Cameraman", b =>
+                {
+                    b.Property<int>("CameramanID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Achievements");
+
+                    b.Property<DateTime>("DateOfBirth");
+
+                    b.Property<string>("EducationQualification");
+
+                    b.Property<string>("FirstdName")
+                        .IsRequired();
+
+                    b.Property<string>("Language");
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.Property<string>("Place");
+
+                    b.Property<string>("Remuneration");
+
+                    b.HasKey("CameramanID");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Director", b =>
+                {
+                    b.Property<int>("DirectorID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Achievements");
+
+                    b.Property<DateTime>("DateOfBirth");
+
+                    b.Property<string>("EducationQualification");
+
+                    b.Property<string>("FirstdName")
+                        .IsRequired();
+
+                    b.Property<string>("Language");
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.Property<int?>("LocationLocationID");
+
+                    b.Property<string>("Place");
+
+                    b.Property<string>("Remuneration");
+
+                    b.HasKey("DirectorID");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Location", b =>
+                {
+                    b.Property<int>("LocationID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Country");
+
+                    b.Property<string>("County");
+
+                    b.Property<double>("Latitude");
+
+                    b.Property<double>("Longitude");
+
+                    b.Property<string>("Place");
+
+                    b.Property<string>("State");
+
+                    b.Property<string>("StateAbbreviation");
+
+                    b.Property<string>("ZipCode");
+
+                    b.HasKey("LocationID");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Producer", b =>
+                {
+                    b.Property<int>("ProducerID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Achievements");
+
+                    b.Property<DateTime>("DateOfBirth");
+
+                    b.Property<string>("EducationQualification");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired();
+
+                    b.Property<string>("Language");
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.Property<string>("Place");
+
+                    b.Property<string>("Remuneration");
+
+                    b.HasKey("ProducerID");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
+                {
+                    b.Property<string>("Id");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("Name")
+                        .HasAnnotation("MaxLength", 256);
+
+                    b.Property<string>("NormalizedName")
+                        .HasAnnotation("MaxLength", 256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .HasAnnotation("Relational:Name", "RoleNameIndex");
+
+                    b.HasAnnotation("Relational:TableName", "AspNetRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasAnnotation("Relational:TableName", "AspNetRoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClaimType");
+
+                    b.Property<string>("ClaimValue");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.HasAnnotation("Relational:TableName", "AspNetUserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider");
+
+                    b.Property<string>("ProviderKey");
+
+                    b.Property<string>("ProviderDisplayName");
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasAnnotation("Relational:TableName", "AspNetUserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<string>("RoleId");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Actor", b =>
+                {
+                    b.HasOne("CodeAgentsTeam3.Models.Location")
+                        .WithMany()
+                        .HasForeignKey("LocationID");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Director", b =>
+                {
+                    b.HasOne("CodeAgentsTeam3.Models.Location")
+                        .WithMany()
+                        .HasForeignKey("LocationLocationID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

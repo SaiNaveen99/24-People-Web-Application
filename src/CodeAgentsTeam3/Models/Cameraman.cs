@@ -9,14 +9,15 @@ namespace CodeAgentsTeam3.Models
 {
     public class Cameraman
     {
-
         [ScaffoldColumn(false)]
+        [Key]
+        public int CameramanID { get; set; }
+
         [Display(Name = "Last Name")]
         [Required]
         public string LastName { get; set; }
 
         [Required]
-        [ScaffoldColumn(false)]
         [Display(Name = "First Name")]
         public string FirstdName { get; set; }
 

@@ -9,6 +9,7 @@ namespace CodeAgentsTeam3.Models
     public class Actress
     {
         [ScaffoldColumn(false)]
+        [Key]
         public int ActressID { get; set; }
         [Required]
 

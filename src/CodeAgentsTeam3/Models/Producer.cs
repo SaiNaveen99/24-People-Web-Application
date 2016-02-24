@@ -9,12 +9,15 @@ namespace CodeAgentsTeam3.Models
     public class Producer
     {
         [ScaffoldColumn(false)]
+        [Key]
+        public int ProducerID { get; set; }
+
+        
         [Display(Name = "Last Name")]
         [Required]
         public string LastName { get; set; }
 
         [Required]
-        [ScaffoldColumn(false)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

@@ -1,227 +1,161 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - 24 People</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 24 People</title>
 
-        <environment names="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-            <link rel="stylesheet" href="~/css/site.css" />
-        </environment>
-        <environment names="Staging,Production">
-            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"/>
-                  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        </environment>
-    </head>
-    <body>
-       <!--  <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">24 People</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
-                </div>
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+        asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <!--  <div class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+             <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+                 <a asp-controller="Home" asp-action="Index" class="navbar-brand">24 People</a>
+             </div>
+             <div class="navbar-collapse collapse">
+                 <ul class="nav navbar-nav">
+                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                     <li><a asp-controller="Home" asp-action="About">About</a></li>
+                     <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                 </ul>
+                 @await Html.PartialAsync("_LoginPartial")
+             </div>
+         </div>
+     </div> -->
+    <br />
+
+    <div class="header-top">
+        <div class="header-bottom">
+            <div class="logo">
+
+                <h1><a asp-controller="Home" asp-action="Index">24 - People</a></h1>
             </div>
-        </div> -->
-        <br />
-        
-        <div class="header-top">
-            <div class="header-bottom">
-                <div class="logo">
-                   
-                    <h1><a asp-controller="Home" asp-action="Index" >24 - People</a></h1>
-                </div>
-                
-                <div class="top-nav">
-                    <ul class="memenu skyblue">
-                        <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="grid">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle"  role="button">Profession</a>
-                            <ul class="dropdown-menu">
-                                <li><a asp-controller="Actors" asp-action="Index">Actor</a></li>
-                                <li><a href="#">Actress</a></li>
-                                <li><a href="#">Director</a></li>
-                                <li><a href="#">Cameraman</a></li>
-                                <li><a href="#">Producer</a></li>
-                            </ul>
 
-                            
-                            
-                               
-                            <div class="mepanel">
-                                <div class="row">
-                                    <div class="col1 me-one">
-                                        <h4>About Us.</h4>
-                                        
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Contact.</h4>
-                                        
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Login</h4>
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        
-                        <li class="grid">
-                            <a asp-controller="Home" asp-action="About">About Us</a>
-                            <div class="mepanel">
-                                <div class="row">
-                                    <div class="col1 me-one">
-                                        <h4>About Us.</h4>
-                                        <ul>
-                                            <li><a href="product.html">New Arrivals</a></li>
-                                            <li><a href="product.html">Home</a></li>
-                                            <li><a href="product.html">Decorates</a></li>
-                                            <li><a href="product.html">Accessories</a></li>
-                                            <li><a href="product.html">Kids</a></li>
-                                            <li><a href="product.html">Login</a></li>
-                                            <li><a href="product.html">Brands</a></li>
-                                            <li><a href="product.html">My Shopping Bag</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Contact</h4>
-                                        <ul>
-                                            <li><a href="product.html">Diwali Lights</a></li>
-                                            <li><a href="product.html">Tube Lights</a></li>
-                                            <li><a href="product.html">Bulbs</a></li>
-                                            <li><a href="product.html">Ceiling Lights</a></li>
-                                            <li><a href="product.html">Accessories</a></li>
-                                            <li><a href="product.html">Lanterns</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col1 me-one">
-                                        <h4>Popular Brands</h4>
-                                        <ul>
-                                            <li><a href="product.html">Everyday</a></li>
-                                            <li><a href="product.html">Philips</a></li>
-                                            <li><a href="product.html">Havells</a></li>
-                                            <li><a href="product.html">Wipro</a></li>
-                                            <li><a href="product.html">Jaguar</a></li>
-                                            <li><a href="product.html">Ave</a></li>
-                                            <li><a href="product.html">Gold Medal</a></li>
-                                            <li><a href="product.html">Anchor</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                       <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        <li class="grid"><a href="contact.html">Login</a></li>
+            <div class="top-nav">
+                <ul class="memenu skyblue">
+                    <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-expanded="false">Profession<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a asp-controller="Actors" asp-action="Index">Actor</a></li>
+                            <li><a href="#">Actress </a></li>
+                            <li><a href="#">Producer </a></li>
+                            <li><a href="#">Director </a></li>
+                            <li><a href="#">Cameraman </a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Others</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="grid"><a asp-controller="Home" asp-action="About">About Us</a></li>
+                    <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li class="grid"><a href="contact.html">Login</a></li>
+                </ul>
+            </div>
+
+
+
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grids">
+                <div class="col-md-2 ftr-grid">
+                </div>
+                <div class="col-md-4 ftr-grid">
+                    <h3>Our Motto</h3>
+                    <p>A team motivated to bridge the gap between a dreamer and worker. Dream big and gather the team you required here to visualize it.</p>
+                </div>
+                <div class="col-md-2 ftr-grid">
+                    <h3>More Info</h3>
+                    <ul class="nav-bottom">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="#">Membership</a></li>
                     </ul>
                 </div>
-
-                
-                
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-
-        <br />
-        <br />
-       
-        <div class="container body-content">
-            @RenderBody()
-            
-        </div>
-
-        <environment names="Development">
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
-        </environment>
-        <environment names="Staging,Production">
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery">
-            </script>
-            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
-                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-            </script>
-            <script src="~/js/site.min.js" asp-append-version="true"></script>
-        </environment>
-
-        @RenderSection("scripts", required: false)
-
-        <div class="footer">
-            <div class="container">
-                <div class="footer-grids">
-                    <div class="col-md-3 about-us">
-                        <h3>About Us</h3>
-                        <p>Maecenas nec auctor sem. Vivamus porttitor tincidunt elementum nisi a, euismod rhoncus urna. Curabitur scelerisque vulputate arcu eu pulvinar. Fusce vel neque diam</p>
-                    </div>
-                    <div class="col-md-3 ftr-grid">
-                        <h3>Information</h3>
-                        <ul class="nav-bottom">
-                            <li><a href="#">Track Order</a></li>
-                            <li><a href="#">New Products</a></li>
-                            <li><a href="#">Location</a></li>
-                            <li><a href="#">Our Stores</a></li>
-                            <li><a href="#">Best Sellers</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 ftr-grid">
-                        <h3>More Info</h3>
-                        <ul class="nav-bottom">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Membership</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 ftr-grid">
-                        <h3>Categories</h3>
-                        <ul class="nav-bottom">
-                            <li><a href="#">Car Lights</a></li>
-                            <li><a href="#">LED Lights</a></li>
-                            <li><a href="#">Decorates</a></li>
-                            <li><a href="#">Wall Lights</a></li>
-                            <li><a href="#">Protectors</a></li>
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
+                <div class="col-md-2 ftr-grid">
+                    <h3>Categories</h3>
+                    <ul class="nav-bottom">
+                        <li><a href="#">Actor</a></li>
+                        <li><a href="#">Actress</a></li>
+                        <li><a href="#">Director</a></li>
+                        <li><a href="#">Cameraman</a></li>
+                        <li><a href="#">Producer</a></li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-        <div class="copywrite">
-            <div class="container">
-                <div class="copy">
-                    <p>© 2016 24 People. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">24 People Team.</a> </p>
-                </div>
-                <div class="social">
-                    <a href="#"><i class="facebook"></i></a>
-                    <a href="#"><i class="twitter"></i></a>
-                    <a href="#"><i class="dribble"></i></a>
-                    <a href="#"><i class="google"></i></a>
-                    <a href="#"><i class="youtube"></i></a>
+                <div class="col-md-2 ftr-grid">
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
-    </body>
+    </div>
+    <div class="copywrite">
+        <div class="container">
+            <div class="copy">
+                <p>© 2016 24 People. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">24 People Team.</a> </p>
+            </div>
+            <div class="social">
+                <a href="#"><i class="facebook"></i></a>
+                <a href="#"><i class="twitter"></i></a>
+                <a href="#"><i class="dribble"></i></a>
+                <a href="#"><i class="google"></i></a>
+                <a href="#"><i class="youtube"></i></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
 </html>

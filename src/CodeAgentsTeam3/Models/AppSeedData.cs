@@ -25,8 +25,12 @@ namespace CodeAgentsTeam3.Models
                 var l7 = context.Locations.Add(new Location() { Latitude = 56.890786562, Longitude = 78.256575, Place = "Hyderabad", Country = "India" }).Entity;
 
                 context.Actor.AddRange(
-                new Actor() { FirstName = "Anves", LastName = "Kolluri", DateOfBirth = "11/09/1992", Languages = "Telugu, English", NumberOfMovies = 3, YearsOfExperience = 4, Remuneration = 200.00, Achievements = "", Qualification = "", Height = 173, Weight = 150, Rating = 4, Location = l1 },
-                new Actor() { FirstName = "Melwin", LastName = "Sam", DateOfBirth = "10/02/2001", Languages = "English", NumberOfMovies = 2, YearsOfExperience = 2, Remuneration = 100.00, Achievements = "", Qualification = "", Height = 180, Weight = 160, Rating = 3, Location = l2 }
+                new Actor() { FirstName = "Kalyan", LastName = "Jenasena", DateOfBirth = "11/09/1979", Languages = "Telugu, English", NumberOfMovies = 16, YearsOfExperience = 14, Remuneration = 2000.00, Achievements = "Filmfare", Qualification = "B.A", Height = 175, Weight = 166, Rating = 5, Location = l1 },
+                new Actor() { FirstName = "Akhil", LastName = "Pothi", DateOfBirth = "04/15/2002", Languages = "Hindi, English", NumberOfMovies = 1, YearsOfExperience = 1, Remuneration = 100.00, Achievements = "", Qualification = "B.Tech", Height = 180, Weight = 145, Rating = 2, Location = l2 },
+                new Actor() { FirstName = "Brad", LastName = "Pitt", DateOfBirth = "11/21/1973", Languages = "English", NumberOfMovies = 6, YearsOfExperience = 5, Remuneration = 3000.00, Achievements = "Oscar, Golden Globe", Qualification = "", Height = 192, Weight = 180, Rating = 5, Location = l3 },
+                new Actor() { FirstName = "Melwin", LastName = "Sam", DateOfBirth = "02/16/2001", Languages = "English", NumberOfMovies = 2, YearsOfExperience = 2, Remuneration = 100.00, Achievements = "", Qualification = "", Height = 180, Weight = 160, Rating = 3, Location = l4 },
+                new Actor() { FirstName = "Anvesh", LastName = "Kolluri", DateOfBirth = "09/07/1992", Languages = "Telugu, English", NumberOfMovies = 3, YearsOfExperience = 4, Remuneration = 200.00, Achievements = "", Qualification = "", Height = 173, Weight = 150, Rating = 4, Location = l5 },
+                new Actor() { FirstName = "Dulquer", LastName = "Salman", DateOfBirth = "10/02/2000", Languages = "Malyalam", NumberOfMovies = 2, YearsOfExperience = 1, Remuneration = 200.00, Achievements = "Nandi", Qualification = "M.Tech", Height = 180, Weight = 160, Rating = 4, Location = l6 }
                 );
 
 

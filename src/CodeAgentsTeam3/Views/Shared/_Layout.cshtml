@@ -4,7 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - 24 People</title>
+   <style>
+     .dropdown-menu {
+      left: 20%;
+      right: 75%;
+      text-align: center;
+      transform: translate(55%, -15%);
+      position: absolute
+     }
+   
 
+   </style>
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -51,21 +61,22 @@
             </div>
 
             <div class="top-nav">
-                <ul class="memenu skyblue">
+                <div class="memenu skyblue">
                     <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
 
-                    <li class="dropdown">
+                    <li class="dropdown-open">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false">Profession<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a asp-controller="Actors" asp-action="Index">Actor</a></li>
-                            <li><a href="#">Actress </a></li>
-                            <li><a href="#">Producer </a></li>
-                            <li><a href="#">Director </a></li>
-                            <li><a href="#">Cameraman </a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Others</a></li>
-                        </ul>
+                           aria-expanded="false" id="dropdownMenu1">Profession<span class="caret"></span></a>
+                        
+                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                            <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index">Actor</a></li>
+                            <li><a class="dropdown-item" href="#">Actress </a> </li>
+                            <li><a class="dropdown-item" href="#">Producer </a> </li>
+                            <li><a class="dropdown-item" href="#">Director </a> </li>
+                            <li><a class="dropdown-item" href="#">Cameraman </a> </li>
+                           </ul>
+
+                        
                     </li>
 
                     <li class="grid"><a asp-controller="Home" asp-action="About">About Us</a></li>

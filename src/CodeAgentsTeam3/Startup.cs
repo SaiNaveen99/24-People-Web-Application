@@ -52,9 +52,9 @@ namespace CodeAgentsTeam3
             //    .AddDbContext<ApplicationDbContext>(options =>
             //        options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
-            //services.AddIdentity<ApplicationUser, IdentityRole>()
-            //    .AddEntityFrameworkStores<ApplicationDbContext>()
-            //    .AddDefaultTokenProviders();
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+               .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddMvc();
             services.AddLogging();
@@ -97,7 +97,7 @@ namespace CodeAgentsTeam3
 
             app.UseStaticFiles();
 
-            //app.UseIdentity();
+            app.UseIdentity();
 
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
 

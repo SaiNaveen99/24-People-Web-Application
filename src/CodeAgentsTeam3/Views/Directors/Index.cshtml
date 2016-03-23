@@ -1,0 +1,155 @@
+@model IEnumerable<CodeAgentsTeam3.Models.Director>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="col-sm-2 sidenav">
+    <br />
+    <h3>Sort By</h3>
+    <p>@Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.FirstNameSortParm })</p>
+    <p>@Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.LastNameSortParm })</p>
+    <p>@Html.ActionLink("Experience", "Index", new { sortOrder = ViewBag.ExperienceSortParm })</p>
+</div>
+
+
+<div class="col-sm-10 text-left">
+
+    @foreach (var item in Model)
+            {
+        <br />
+
+                <div class="col-lg-12 text-left">
+
+
+                    <div class="row">
+
+
+                        <div class="col-sm-2">
+                            <img src="~/lib/bootstrap/dist/images/defaultuser.png" /><br />
+                        </div>
+                        <div class="col-md-4">
+                            <p>First Name: @Html.DisplayFor(modelItem => item.FirstName) </p>
+                            <p>Last Name: @Html.DisplayFor(modelItem => item.LastName) </p>
+                            <p>Experience: @Html.DisplayFor(modelItem => item.Experience) </p>
+                            
+                        </div>
+
+                        <div class="col-md-4">
+                            <a asp-action="Details" asp-route-id="@item.DirectorID">View Profile</a> <br />
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <br /><br />
+                    </div>
+
+                </div>
+
+    }
+
+</div>
+
+
+
+
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Achievements)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationQualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ethinicity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eyes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hair)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NativeLanguage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remuneration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Achievements)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EducationQualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ethinicity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eyes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hair)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NativeLanguage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remuneration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.DirectorID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.DirectorID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.DirectorID">Delete</a>
+        </td>
+    </tr>
+}
+</table>*@

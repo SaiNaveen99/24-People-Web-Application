@@ -1,0 +1,121 @@
+@model CodeAgentsTeam3.Models.Director
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Director</h4>
+    <hr />
+
+    <div class="jumbotron" style="align-items:center; background-color:lavender;">
+        <p style="margin-left:420px;color:whitesmoke;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:30px">Pranay Peddi</p>
+        <img src="~/lib/bootstrap/dist/images/defaultuser.png" class="img-responsive img-circle" style="height: 40%; width: 35%; align-self:center;margin-left:340px; position:center" />
+        <br />
+        <p style="margin-left:440px;color:whitesmoke">Director</p>
+        <p style="margin-left:300px; color:whitesmoke"></p>
+
+        <hr style="background-color:whitesmoke; border:0; height:1px" />
+        <br />
+
+        <table border="0" style="margin-left:29%;width:50%" cellspacing="100">
+            <tr>
+                <td><a href="mailto:S525083@mail.nwmissouri.edu"><img src="http://s23.postimg.org/q6yng47lj/MS_Outlook_48.png" /></a></td>
+                <td><a href="https://www.facebook.com/pranay.peddi"><img src="http://s11.postimg.org/t2ngcj0zz/Facebook_48.png" /></a></td>
+                <td><a href="https://twitter.com/peddipranay"><img src="http://s11.postimg.org/inlvhct73/Twitter_48.png" /></a></td>
+                <td><a href="https://plus.google.com/getstarted/getstarted?fww=1&continue=https://plus.google.com/me"><img src="http://s13.postimg.org/wxkk0uker/Google_Plus_48.png" /></a></td>
+                <td><a href="https://www.linkedin.com/in/peddi-pranay-90626360"><img src="http://s14.postimg.org/a6v6vjkt9/Linked_In_48.png" /></a></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Achievements)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Achievements)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationQualification)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EducationQualification)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ethinicity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ethinicity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Eyes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Eyes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Hair)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hair)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NativeLanguage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NativeLanguage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Remuneration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Remuneration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.DirectorID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

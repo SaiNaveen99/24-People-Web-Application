@@ -4,15 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Data.Entity;
+using System.IO;
 
 namespace CodeAgentsTeam3.Models
 {
     public static class AppSeedData
     {
-        public static void Initialize(IServiceProvider serviceProvider)
+        public static void Initialize(IServiceProvider serviceProvider,string appPath )
         {
+            string relPath = appPath + "//Models//Files//";
             var context = serviceProvider.GetService<ApplicationDbContext>();
+
+            context.Director.RemoveRange(context.Director);
+            context.SaveChanges();
+            DirectorFromCSV(relPath, context);
             context.Database.Migrate();
+           
 
             if (!context.Locations.Any())
             {
@@ -37,8 +44,19 @@ namespace CodeAgentsTeam3.Models
                 context.SaveChanges();
             }
 
+        }
 
+        private static void DirectorFromCSV(string relPath, ApplicationDbContext context)
+        {
+            string source = relPath + "Directors.csv";
+            if (!File.Exists(source))
+            {
+                throw new Exception("File does not exists..!!!");
+            }
 
+            List<Director> list = Director.ReadAllFromCSV(source);
+            context.Director.AddRange(list.ToArray());
+            context.SaveChanges();
         }
     }
 }

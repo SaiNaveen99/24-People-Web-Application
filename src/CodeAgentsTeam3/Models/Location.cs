@@ -32,7 +32,6 @@ namespace CodeAgentsTeam3.Models
         public double Longitude { get; set; }
 
 
-        // Navigation Property.
-        public virtual ICollection<Director> Director { get; set; }
+        
     }
 }

@@ -23,5 +23,9 @@ namespace CodeAgentsTeam3.Models
         public DbSet<Cameraman> Cameraman { get; set; }
         public DbSet<Actor> Actor { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Film_Director> Film_Directors { get; set; }
+        public DbSet<Photos_Director> Photos_Directors { get; set; }
+        public DbSet<Education_Director> Education_Directors { get; set; }
+
     }
 }

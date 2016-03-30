@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{899E2297-87C9-47E2-9A99-FCDF620788C4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Downloads\filmreel.jpg = ..\..\Downloads\filmreel.jpg
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2D6B9A2-990E-41EC-B871-2F5AF0F9E865}"
 	ProjectSection(SolutionItems) = preProject

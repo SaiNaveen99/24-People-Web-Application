@@ -106,9 +106,9 @@ namespace CodeAgentsTeam3.Models
         }
 
 
-        public virtual ICollection<Film_Director> Film_Directors { get; set; }
-        public virtual ICollection<Photos_Director> Photos_Directors { get; set; }
-        public virtual ICollection<Education_Director> Education_Directors { get; set; }
+        //public virtual ICollection<Film_Director> Film_Directors { get; set; }
+        //public virtual ICollection<Photos_Director> Photos_Directors { get; set; }
+        //public virtual ICollection<Education_Director> Education_Directors { get; set; }
        
     }
 }

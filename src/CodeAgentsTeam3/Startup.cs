@@ -61,8 +61,8 @@ namespace CodeAgentsTeam3
             services.AddLogging();
 
             // Add application services.
-            //services.AddTransient<IEmailSender, AuthMessageSender>();
-            //services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -109,7 +109,7 @@ namespace CodeAgentsTeam3
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            AppSeedData.Initialize(app.ApplicationServices, appEnv.ApplicationBasePath);
+          //  AppSeedData.Initialize(app.ApplicationServices, appEnv.ApplicationBasePath);
 
         }
 

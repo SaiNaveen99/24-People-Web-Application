@@ -89,6 +89,10 @@ namespace CodeAgentsTeam3.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -187,34 +191,36 @@ namespace CodeAgentsTeam3.Migrations
                     b.HasKey("DirectorID");
                 });
 
-            modelBuilder.Entity("CodeAgentsTeam3.Models.Education_Director", b =>
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Education", b =>
                 {
-                    b.Property<int>("DirectorID")
+                    b.Property<int>("EducationID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Degree")
+                    b.Property<string>("Degree");
+
+                    b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<int?>("DirectorsDirectorID");
+                    b.Property<string>("School");
 
-                    b.Property<string>("Year");
+                    b.Property<int>("Year");
 
-                    b.HasKey("DirectorID");
+                    b.HasKey("EducationID");
                 });
 
-            modelBuilder.Entity("CodeAgentsTeam3.Models.Film_Director", b =>
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Flim", b =>
                 {
-                    b.Property<int>("DirectorID")
+                    b.Property<int>("FlimID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("DirectorsDirectorID");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
                     b.Property<string>("Role");
 
-                    b.Property<string>("Title")
-                        .IsRequired();
+                    b.Property<string>("Title");
 
-                    b.HasKey("DirectorID");
+                    b.HasKey("FlimID");
                 });
 
             modelBuilder.Entity("CodeAgentsTeam3.Models.Location", b =>
@@ -241,18 +247,17 @@ namespace CodeAgentsTeam3.Migrations
                     b.HasKey("LocationID");
                 });
 
-            modelBuilder.Entity("CodeAgentsTeam3.Models.Photos_Director", b =>
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Photo", b =>
                 {
-                    b.Property<int>("DirectorID")
+                    b.Property<int>("PhotoID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("DirectorsDirectorID");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
-                    b.Property<int>("PhotoNo");
+                    b.Property<string>("PhotoURL");
 
-                    b.Property<string>("URL");
-
-                    b.HasKey("DirectorID");
+                    b.HasKey("PhotoID");
                 });
 
             modelBuilder.Entity("CodeAgentsTeam3.Models.Producer", b =>
@@ -279,6 +284,47 @@ namespace CodeAgentsTeam3.Migrations
                     b.Property<string>("Remuneration");
 
                     b.HasKey("ProducerID");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.Profile", b =>
+                {
+                    b.Property<int>("ProfileID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("Ethinicity");
+
+                    b.Property<string>("Experience");
+
+                    b.Property<string>("Eyes");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired();
+
+                    b.Property<int>("Gender");
+
+                    b.Property<string>("Hair");
+
+                    b.Property<string>("Height");
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.Property<string>("NativeLanguage");
+
+                    b.Property<string>("Remuneration");
+
+                    b.Property<string>("Weight");
+
+                    b.Property<string>("mail");
+
+                    b.HasKey("ProfileID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
@@ -368,27 +414,6 @@ namespace CodeAgentsTeam3.Migrations
                     b.HasOne("CodeAgentsTeam3.Models.Location")
                         .WithMany()
                         .HasForeignKey("LocationID");
-                });
-
-            modelBuilder.Entity("CodeAgentsTeam3.Models.Education_Director", b =>
-                {
-                    b.HasOne("CodeAgentsTeam3.Models.Director")
-                        .WithMany()
-                        .HasForeignKey("DirectorsDirectorID");
-                });
-
-            modelBuilder.Entity("CodeAgentsTeam3.Models.Film_Director", b =>
-                {
-                    b.HasOne("CodeAgentsTeam3.Models.Director")
-                        .WithMany()
-                        .HasForeignKey("DirectorsDirectorID");
-                });
-
-            modelBuilder.Entity("CodeAgentsTeam3.Models.Photos_Director", b =>
-                {
-                    b.HasOne("CodeAgentsTeam3.Models.Director")
-                        .WithMany()
-                        .HasForeignKey("DirectorsDirectorID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>

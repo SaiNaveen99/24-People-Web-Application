@@ -23,19 +23,22 @@ namespace CodeAgentsTeam3.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+        private readonly ApplicationDbContext _context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _context = context;
         }
 
         //
@@ -104,10 +107,33 @@ namespace CodeAgentsTeam3.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+
+                    Profile p = new Profile();
+                    p.Email = model.Email;
+                    p.FirstName = model.FirstName;
+                    p.LastName = model.LastName;
+                    _context.profiles.Add(p);
+                    _context.SaveChanges();
+
+                    Flim f = new Flim();
+                    f.Email = model.Email;
+                    _context.flims.Add(f);
+                    _context.SaveChanges();
+
+                    Education e = new Education();
+                    e.Email = model.Email;
+                    _context.educations.Add(e);
+                    _context.SaveChanges();
+
+                    Photo t = new Photo();
+                    t.Email = model.Email;
+                    _context.photos.Add(t);
+                    _context.SaveChanges();
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
                     // Send an email with this link
                     //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -116,7 +142,7 @@ namespace CodeAgentsTeam3.Controllers
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
-                    return RedirectToAction(nameof(HomeController.Index), "Home");
+                    return RedirectToAction(nameof(ProfilesController.Index), "Profiles");
                 }
                 AddErrors(result);
             }

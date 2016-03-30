@@ -27,6 +27,7 @@ namespace CodeAgentsTeam3.Models
         public DbSet<Flim> flims { get; set; }
         public DbSet<Photo> photos { get; set; }
         public DbSet<Education> educations { get; set; }
+        public DbSet<FindTalent> FindTalents { get; set; }
 
     }
 }

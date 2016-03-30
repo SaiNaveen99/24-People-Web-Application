@@ -48,10 +48,10 @@ namespace CodeAgentsTeam3
 
 
             // Add framework services.
-            //services.AddEntityFramework()
-            //    .AddSqlServer()
-            //    .AddDbContext<ApplicationDbContext>(options =>
-            //        options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -109,7 +109,7 @@ namespace CodeAgentsTeam3
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-          //  AppSeedData.Initialize(app.ApplicationServices, appEnv.ApplicationBasePath);
+            AppSeedData.Initialize(app.ApplicationServices);
 
         }
 

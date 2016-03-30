@@ -1,0 +1,202 @@
+@model IEnumerable<CodeAgentsTeam3.Models.FindTalent>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 24 Persons</title>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/home.css" />
+
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+    </environment>
+    <style>
+        #aboutus {
+            background-image: url('/img/background.jpg');
+            background-size: contain;
+        }
+
+        .linksHover a {
+            opacity: 0.6;
+        }
+
+            .linksHover a:hover {
+                opacity: 1;
+            }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-2 sidenav">
+            <br />
+            @using (Html.BeginForm())
+            {
+                <p>
+                    Filter By: @Html.TextBox("SearchString")
+                    <input type="submit" value="Search" />
+                </p>
+            }
+            <br /><br />
+            <h3>Sort By</h3>
+            <p>@Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.FirstNameSortParm })</p>
+            <p>@Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.LastNameSortParm })</p>
+            <p>@Html.ActionLink("Experience", "Index", new { sortOrder = ViewBag.ExperienceSortParm })</p>
+            <p>@Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.RatingSortParm })</p>
+        </div>
+
+        <div class="col-sm-10 text-left">
+
+            @foreach (var item in Model)
+            {
+                <br />
+                <div class="col-lg-12 text-left">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="~/lib/bootstrap/dist/images/defaultuser.png" /><br />
+                        </div>
+                        <div class="col-md-4">
+                            <p>First Name: @Html.DisplayFor(modelItem => item.FirstName) </p>
+                            <p>Last Name: @Html.DisplayFor(modelItem => item.LastName) </p>
+                            <p>Profession: @Html.DisplayFor(modelItem => item.Profession) </p>
+                            <p>Experience: @Html.DisplayFor(modelItem => item.Experience) </p>
+                            <p>
+                                @if (item.Rating == 1)
+                                {
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star-empty"></i>
+                                    <i class="glyphicon glyphicon-star-empty"></i>
+                                    <i class="glyphicon glyphicon-star-empty"></i>
+                                    <i class="glyphicon glyphicon-star-empty"></i>
+                                }
+                                else if (item.Rating == 2)
+                                {
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+
+                                }
+                                else if (item.Rating == 3)
+                                {
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+
+                                }
+                                else if (item.Rating == 4)
+                                {
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+
+                                }
+                                else if (item.Rating == 5)
+                                {
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
+                                        <i class="glyphicon glyphicon-star"></i>
+
+                                }
+                                else
+                                {
+                                    <i class="glyphicon glyphicon-star-empty"></i>
+                                    <i class="glyphicon glyphicon-star-empty"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+                                        <i class="glyphicon glyphicon-star-empty"></i>
+                                }
+                            </p>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <a asp-action="Details" asp-route-id="@item.FindTalentID">Details</a> <br />
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <br /><br />
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+@*@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Experience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profession)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Experience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profession)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.FindTalentID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.FindTalentID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.FindTalentID">Delete</a>
+        </td>
+    </tr>
+}
+</table>*@

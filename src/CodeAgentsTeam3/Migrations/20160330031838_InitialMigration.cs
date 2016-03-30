@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace CodeAgentsTeam3.Migrations
 {
-    public partial class initialmigration : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -112,6 +112,22 @@ namespace CodeAgentsTeam3.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Education", x => x.EducationID);
+                });
+            migrationBuilder.CreateTable(
+                name: "FindTalent",
+                columns: table => new
+                {
+                    FindTalentID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Experience = table.Column<int>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Profession = table.Column<string>(nullable: true),
+                    Rating = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FindTalent", x => x.FindTalentID);
                 });
             migrationBuilder.CreateTable(
                 name: "Flim",
@@ -350,6 +366,7 @@ namespace CodeAgentsTeam3.Migrations
             migrationBuilder.DropTable("Cameraman");
             migrationBuilder.DropTable("Director");
             migrationBuilder.DropTable("Education");
+            migrationBuilder.DropTable("FindTalent");
             migrationBuilder.DropTable("Flim");
             migrationBuilder.DropTable("Photo");
             migrationBuilder.DropTable("Producer");

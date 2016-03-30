@@ -8,8 +8,8 @@ using CodeAgentsTeam3.Models;
 namespace CodeAgentsTeam3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160330000440_initialmigration")]
-    partial class initialmigration
+    [Migration("20160330031838_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -207,6 +207,24 @@ namespace CodeAgentsTeam3.Migrations
                     b.Property<int>("Year");
 
                     b.HasKey("EducationID");
+                });
+
+            modelBuilder.Entity("CodeAgentsTeam3.Models.FindTalent", b =>
+                {
+                    b.Property<int>("FindTalentID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Experience");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Profession");
+
+                    b.Property<int>("Rating");
+
+                    b.HasKey("FindTalentID");
                 });
 
             modelBuilder.Entity("CodeAgentsTeam3.Models.Flim", b =>

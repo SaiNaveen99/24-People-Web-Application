@@ -208,6 +208,24 @@ namespace CodeAgentsTeam3.Migrations
                     b.HasKey("EducationID");
                 });
 
+            modelBuilder.Entity("CodeAgentsTeam3.Models.FindTalent", b =>
+                {
+                    b.Property<int>("FindTalentID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Experience");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Profession");
+
+                    b.Property<int>("Rating");
+
+                    b.HasKey("FindTalentID");
+                });
+
             modelBuilder.Entity("CodeAgentsTeam3.Models.Flim", b =>
                 {
                     b.Property<int>("FlimID")

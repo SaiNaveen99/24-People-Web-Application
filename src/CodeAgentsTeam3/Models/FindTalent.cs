@@ -24,5 +24,7 @@ namespace CodeAgentsTeam3.Models
 
         public int Rating { get; set; }
 
+        public String Image { get; set; }
+
     }
 }

@@ -217,6 +217,8 @@ namespace CodeAgentsTeam3.Migrations
 
                     b.Property<string>("FirstName");
 
+                    b.Property<string>("Image");
+
                     b.Property<string>("LastName");
 
                     b.Property<string>("Profession");

@@ -121,6 +121,7 @@ namespace CodeAgentsTeam3.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Experience = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
+                    Image = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Profession = table.Column<string>(nullable: true),
                     Rating = table.Column<int>(nullable: false)

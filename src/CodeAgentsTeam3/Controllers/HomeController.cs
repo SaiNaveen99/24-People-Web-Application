@@ -31,5 +31,19 @@ namespace CodeAgentsTeam3.Controllers
         {
             return View();
         }
+
+        public IActionResult Milestones()
+        {
+            return View();
+        }
+        public IActionResult Goal()
+        {
+            return View();
+
+        }
+        public IActionResult FutureWork()
+        {
+            return View();
+        }
     }
 }

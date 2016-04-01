@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - 24 People</title>
    <style>
-     .dropdown-menu {
-      left: 20%;
+    .dropdown-menu {
+      left: 30%;
       right: 75%;
       text-align: center;
-      transform: translate(55%, -15%);
-      position: absolute
+      transform: translate(65%, -15%);
+      position: absolute;
+      
      }
-   
-
    </style>
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -63,24 +62,23 @@
                         <h1><a asp-controller="Home" asp-action="Index">24 - People</a></h1>
                     </div></li>
                      <li class="active"><a asp-controller="Home" asp-action="Index">Home</a></li>
-
                     <li class="dropdown-open">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false" id="dropdownMenu1">Find Talents<span class="caret"></span></a>
-                        
-                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
-                            <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index">Actor</a></li>
-                            <li><a class="dropdown-item" href="#">Actress </a> </li>
-                            <li><a class="dropdown-item" href="#">Producer </a> </li>
-                            <li><a class="dropdown-item" asp-controller="Directors" asp-action="Index">Director</a> </li>
-                            <li><a class="dropdown-item" href="#">Cameraman </a> </li>
-                           </ul>
+                           aria-expanded="false" id="dropdownMenu1">More Info<span class="caret"></span></a>
 
-                        
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Goal">Our Goal</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Milestones">Milestones </a> </li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="FutureWork">Future Work </a> </li>
+                        </ul>
+
+
                     </li>
 
+                   
                     <li class="grid"><a asp-controller="Home" asp-action="About">About Us</a></li>
                     <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+ 
                     <li class="grid"><a asp-controller="Account" asp-action="Login">Login</a></li>
                     <li class="grid"><a asp-controller="Account" asp-action="Register">Register</a></li>
                     <li class="grid"><a asp-controller="FindTalents" asp-action="Index">Find Talent</a></li>

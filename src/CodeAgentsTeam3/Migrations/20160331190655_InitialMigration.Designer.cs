@@ -8,7 +8,7 @@ using CodeAgentsTeam3.Models;
 namespace CodeAgentsTeam3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160330201424_InitialMigration")]
+    [Migration("20160331190655_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -217,6 +217,8 @@ namespace CodeAgentsTeam3.Migrations
                     b.Property<int>("Experience");
 
                     b.Property<string>("FirstName");
+
+                    b.Property<string>("Image");
 
                     b.Property<string>("LastName");
 

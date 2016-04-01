@@ -12,7 +12,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Custom Theme files -->
     <!--theme style-->
     <link href="~/lib/bootstrap/dist/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="~/lib/bootstrap/dist/js/jquery.min.js"></script>
+
+    <!-- Modal class-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!--//theme style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,58 +110,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="items">
         <div class="container" style="background-color:#F1F1F1">
             <br />
-            <h1 style="font-family:'Dosis-Medium';color:lightcoral">Trending Technicians</h1>
+            <h1 style="font-family:'Dosis-Medium';color:lightcoral">Trending Technicians</h1>   
             <br />
             <div class="items-sec">
                 <div class="col-md-3 feature-grid">
-                    <a href="product.html">
-                        <img src="~/lib/bootstrap/dist/images/Melwin.jpg" alt="" />
-                        <div class="arrival-info">
-                            <h4>Director</h4>
-                            <p>Melwin Sam</p>
-                            
-                        </div>
-                        <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
-                        </div>
+                    <a class="thumbnail" data-toggle="modal" data-target="#melwin">
+                            <img class="center-block" src="~/lib/bootstrap/dist/images/Melwin.jpg" alt="" />
+                            <div class="arrival-info">
+                                <h4>Actor</h4>
+                                <p>Melwin Sam</p>
+
+                            </div>
+                            <div class="viw">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+                            </div>
                     </a>
                 </div>
                 <div class="col-md-3 feature-grid">
-                    <a href="product.html">
-                        <img src="~/lib/bootstrap/dist/images/Amrutha.jpg" alt="" />
+                    <a class="thumbnail" data-toggle="modal" data-target="#amrutha">
+                        <img class="center-block" img src="~/lib/bootstrap/dist/images/Amrutha.jpg" alt="" />
                         <div class="arrival-info">
                             <h4>Actress</h4>
                             <p>Amrutha</p>
-                            
+
                         </div>
                         <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 feature-grid">
-                    <a href="product.html">
-                        <img src="~/lib/bootstrap/dist/images/Akhil.jpg" alt="" />
+                    <a class="thumbnail" data-toggle="modal" data-target="#akhil">
+                        <img class="center-block" src="~/lib/bootstrap/dist/images/Akhil.jpg" alt="" />
                         <div class="arrival-info">
                             <h4>Actor</h4>
                             <p>Akhil</p>
-                          
+
                         </div>
                         <div class="viw">
-                            <a href="product.html">View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
                 <div class="col-md-3 feature-grid">
-                    <a href="product.html">
-                        <img src="~/lib/bootstrap/dist/images/Kalyan.jpg" alt="" />
+                    <a class="thumbnail" data-toggle="modal" data-target="#kalyan">
+                        <img class="center-block" src="~/lib/bootstrap/dist/images/Kalyan.jpg" alt="" />
                         <div class="arrival-info">
-                            <h4>Actor</h4>
+                            <h4>Cameraman</h4>
                             <p>Kalyan</p>
-                            
+
                         </div>
                         <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
@@ -172,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                          
                         </div>
                         <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
@@ -185,7 +190,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             
                         </div>
                         <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
@@ -198,7 +203,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             
                         </div>
                         <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
@@ -211,7 +216,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                            
                         </div>
                         <div class="viw">
-                            <a href="product.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View</a>
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
                         </div>
                     </a>
                 </div>
@@ -270,6 +275,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <br />
 
     <!---->
+
+        <!-- Modal -->
+        <div class="modal fade" id="melwin" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Melwin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-responsive center-block" src="~/lib/bootstrap/dist/images/Melwin.jpg" alt="">
+                        <div style="margin-top:3px; font-family:'Times New Roman', Times, serif;font-size:14px">
+                            <b>Purpose:</b> I am very higly motivated professional and a great passion to showcase my acting talent.
+                            <ul>
+                                <li>Age: 25</li>
+                                <li>Height: 5 ft 6 inch</li>
+                                <li>Experience: 3 Years</li>
+                            </ul> 
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 </body>
 </html>
 

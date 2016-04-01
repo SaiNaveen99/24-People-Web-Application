@@ -46,7 +46,7 @@
                      <li><a asp-controller="Home" asp-action="About">About</a></li>
                      <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                  </ul>
-                 @await Html.PartialAsync("_LoginPartial")
+               
              </div>
          </div>
      </div> -->
@@ -58,6 +58,7 @@
 
             <div>
                 <div class="memenu skyblue">
+                   
                    <li><div class="logo">
                         <h1><a asp-controller="Home" asp-action="Index">24 - People</a></h1>
                     </div></li>
@@ -74,14 +75,9 @@
                     </li>
                     <li class="grid"><a asp-controller="FindTalents" asp-action="Index">Find Talent</a></li>
                     <li class="grid"><a asp-controller="Home" asp-action="About">About Us</a></li>
-                    <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>
- 
-                    
-
-                    <li class="grid"><a asp-controller="Account" asp-action="Login">Login</a></li>
-                    <li class="grid"><a asp-controller="Account" asp-action="Register">Register</a></li>
-                    
-                </ul>
+                    <li class="grid"><a asp-controller="Home" asp-action="Contact">Contact</a></li>  
+                 
+                    @await Html.PartialAsync("_LoginPartial")
             </div>
 
 

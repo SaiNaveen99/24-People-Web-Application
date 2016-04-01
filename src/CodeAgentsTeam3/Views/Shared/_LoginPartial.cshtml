@@ -2,12 +2,12 @@
 
 @if (User.IsSignedIn())
 {
-    <form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+    <form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm">
         <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li><br/>
                 <a asp-controller="Manage" asp-action="Index" title="Manage">Hello @User.GetUserName()!</a>
             </li>
-            <li>
+            <li><br/>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
             </li>
         </ul>
@@ -15,14 +15,6 @@
 }
 else
 {
-    <div class="header-top">
-            <div>
-                <div class="memenu skyblue">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a asp-controller="Account" asp-action="Register">Register</a></li>
-                        <li><a asp-controller="Account" asp-action="Login">Log in</a></li>
-                    </ul>
-                </div>
-            </div>
-            </div>
-            }
+    <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+    <li><a asp-controller="Account" asp-action="Login">Log in</a></li>                    
+}

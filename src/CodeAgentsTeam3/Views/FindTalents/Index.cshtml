@@ -129,6 +129,12 @@
                         <div class="col-md-4">
 
                             <a asp-action="Details" asp-route-id="@item.FindTalentID">Details</a> <br />
+                            @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+                            {
+                                // Do something here
+                                <a asp-action="Edit" asp-route-id="@item.FindTalentID">Edit</a><br />
+                                <a asp-action="Delete" asp-route-id="@item.FindTalentID">Delete</a>
+                            }
 
                         </div>
 

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using CodeAgentsTeam3.Models;
 using CodeAgentsTeam3.Services;
 using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.AspNet.Identity;
 
 namespace CodeAgentsTeam3
 {
@@ -66,7 +67,7 @@ namespace CodeAgentsTeam3
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IApplicationEnvironment appEnv)
+        public async void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IApplicationEnvironment appEnv, ApplicationDbContext context, IServiceProvider serviceProvider)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -110,6 +111,44 @@ namespace CodeAgentsTeam3
             });
 
             AppSeedData.Initialize(app.ApplicationServices);
+
+            await CreateRoles(context, serviceProvider);
+        }
+
+        private async Task CreateRoles(ApplicationDbContext context, IServiceProvider serviceProvider)
+        {
+            
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+            //string[] roleNames = { "Admin", "Member" };
+            //IdentityResult roleResult;
+            //    foreach (var roleName in roleNames)
+            //    {
+            //        var roleExist = await RoleManager.RoleExistsAsync(roleName);
+            //        if (!roleExist)
+            //        {
+            //            roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
+            //        }
+            //    }
+
+            List<IdentityRole> roles = new List<IdentityRole>();
+            roles.Add(new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" });
+            roles.Add(new IdentityRole { Name = "Member", NormalizedName = "MEMBER" });
+            foreach (var role in roles)
+            {
+                var roleExists = await RoleManager.RoleExistsAsync(role.Name);
+                if (!roleExists)
+                {
+                    context.Roles.Add(role);
+                    context.SaveChanges();
+                }
+
+            }
+
+            var user = await UserManager.FindByIdAsync("f69efbe8-d430-4abb-97c8-e3e44e83a117");
+
+            await UserManager.AddToRoleAsync(user,"Admin");
 
         }
 

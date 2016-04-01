@@ -102,6 +102,12 @@ namespace CodeAgentsTeam3
             app.UseIdentity();
 
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
+            app.UseFacebookAuthentication(options =>
+            {
+                options.AppId = "1734149490131580";
+                options.AppSecret = "215c9c16c748d0138fbfacd3d7363b06";
+            });
+
 
             app.UseMvc(routes =>
             {

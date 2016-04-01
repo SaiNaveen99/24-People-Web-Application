@@ -20,6 +20,23 @@
 
     </environment>
     <style>
+
+        #myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+}
+
+#myBar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: lightcoral;
+}
+
+
+
         #aboutus {
             background-image: url('/img/background.jpg');
             background-size: contain;
@@ -128,7 +145,7 @@
 
                         <div class="col-md-4">
 
-                            <a asp-action="Details" asp-route-id="@item.FindTalentID">Details</a> <br />
+                            <a data-toggle="modal" data-target="#melwin">Details</a> <br />
                             @if (ViewContext.HttpContext.User.IsInRole("Admin"))
                             {
                                 // Do something here
@@ -149,62 +166,135 @@
 
         </div>
     </div>
+
+
+    <div class="modal fade" id="melwin" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Melwin</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive center-block" src="~/lib/bootstrap/dist/images/Melwin.jpg" alt="">
+                    <div style="margin-top:3px; font-family:'Times New Roman', Times, serif;font-size:14px">
+                        <b style="font-family:'Dosis-Medium';color:lightcoral">Description: </b> I am very higly motivated professional and a great passion to showcase my acting talent.
+                        <ul>
+                            <li style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:large">Age: 25</li>
+                            <li style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:large">Height: 5 ft 6 inch</li>
+                            <li style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:large">Experience: 3 Years</li>
+                        </ul>
+                    </div>
+                    <hr />
+                    <h4><b style="font-family:'Dosis-Medium';color:lightcoral">Previous Work</b></h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Film Name</th>
+                                <th>Role</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Two States</td>
+                                <td>Doe's father</td>
+                                <td>2008</td>
+                            </tr>
+                            <tr>
+                                <td>Fire</td>
+                                <td>The Driver</td>
+                                <td>2010</td>
+                            </tr>
+                            <tr>
+                                <td>Heart Beat</td>
+                                <td>Hero</td>
+                                <td>2010</td>
+                            </tr>
+
+                            <tr>
+                                <td>Pulp Fiction</td>
+                                <td>Friend of Sam</td>
+                                <td>2010</td>
+                            </tr>
+                            <tr>
+                                <td>Die Hard</td>
+                                <td>Body Builder</td>
+                                <td>2014</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <h4><b style="font-family:'Dosis-Medium';color:lightcoral">Education Qualification</b></h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Degree</th>
+                                <th>Instituition</th>
+                                <th>Graduation Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Master's in Mass Media</td>
+                                <td>New York Film Academy</td>
+                                <td>2004</td>
+                            </tr>
+                            <tr>
+                                <td>Bachelor's in Multimedia</td>
+                                <td>Pratt Institue</td>
+                                <td>2000</td>
+                            </tr>
+                         <hr />
+
+                           
+
+                            
+                        </tbody>
+                    </table>
+                    <hr />
+
+
+                    <h4><b style="font-family:'Dosis-Medium';color:lightcoral">Videos</b></h4>
+                    <iframe width="185" height="150" src="https://www.youtube.com/embed/22cN-b8R5Zk" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="185" height="150" src="https://www.youtube.com/embed/-7wEWob72S4" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="185" height="150" src="https://www.youtube.com/embed/pfOl-ZcsWyI" frameborder="0" allowfullscreen></iframe>
+
+                    <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
+
+                    <br>
+                    <button onclick="move()" style="font-family:'Dosis-Medium';color:lightcoral">Star Dust Rating</button>
+
+                    <script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+        
+      elem.style.width = 70 + '%';
+    }
+  }
+}
+                    </script>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
 
 
-
-@*@{
-    ViewData["Title"] = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Experience)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profession)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        <th></th>
-    </tr>
-    
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Experience)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profession)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
-            <a asp-action="Edit" asp-route-id="@item.FindTalentID">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.FindTalentID">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.FindTalentID">Delete</a>
-        </td>
-    </tr>
-}
-</table>*@
+  

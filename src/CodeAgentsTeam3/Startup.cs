@@ -104,8 +104,8 @@ namespace CodeAgentsTeam3
             // To configure external authentication please see http://go.microsoft.com/fwlink/?LinkID=532715
             app.UseFacebookAuthentication(options =>
             {
-                options.AppId = "1734149490131580";
-                options.AppSecret = "215c9c16c748d0138fbfacd3d7363b06";
+                options.AppId = "445714232301665";
+                options.AppSecret = "eca2c303d73b9bbe7bb005a82451fdd7";
             });
 
 
@@ -152,9 +152,9 @@ namespace CodeAgentsTeam3
 
             }
 
-            //var user = await UserManager.FindByIdAsync("f69efbe8-d430-4abb-97c8-e3e44e83a117");
+            var user = await UserManager.FindByIdAsync("6a48c485-a2d2-414b-9301-1ecf12e3865e");
 
-            //await UserManager.AddToRoleAsync(user,"Admin");
+            await UserManager.AddToRoleAsync(user,"Admin");
 
         }
 

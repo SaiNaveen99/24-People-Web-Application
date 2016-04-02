@@ -8,8 +8,8 @@ using CodeAgentsTeam3.Models;
 namespace CodeAgentsTeam3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160401075930_initialmigration")]
-    partial class initialmigration
+    [Migration("20160402171336_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

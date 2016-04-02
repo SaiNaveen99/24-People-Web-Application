@@ -116,6 +116,7 @@ namespace CodeAgentsTeam3
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+
             AppSeedData.Initialize(app.ApplicationServices);
 
             await CreateRoles(context, serviceProvider);

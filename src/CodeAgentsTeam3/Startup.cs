@@ -154,9 +154,9 @@ namespace CodeAgentsTeam3
 
             }
 
-            var user = await UserManager.FindByIdAsync("6a48c485-a2d2-414b-9301-1ecf12e3865e");
+            //var user = await UserManager.FindByIdAsync("6a48c485-a2d2-414b-9301-1ecf12e3865e");
 
-            await UserManager.AddToRoleAsync(user,"Admin");
+            //await UserManager.AddToRoleAsync(user,"Admin");
 
         }
 

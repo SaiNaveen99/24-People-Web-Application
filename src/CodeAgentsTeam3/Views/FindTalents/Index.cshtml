@@ -80,7 +80,8 @@
                     <div class="row">
                         <div class="col-sm-2">
                             @*<img src="~/lib/bootstrap/dist/images/defaultuser.png" /><br />*@
-                            <img src="@Html.DisplayFor(modelItem => item.Image)" /><br />
+                            <img src="@Html.DisplayFor(modelItem => item.Image)" class="img-responsive" alt="FindTalent Profile">
+                            <br />
                         </div>
                         <div class="col-md-4">
                             <p>First Name: @Html.DisplayFor(modelItem => item.FirstName) </p>

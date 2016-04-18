@@ -116,5 +116,13 @@ namespace CodeAgentsTeam3.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public int Add(int x, int y)
+        {
+
+            return x + y;
+
+        }
+
     }
 }

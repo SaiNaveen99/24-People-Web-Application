@@ -57,6 +57,18 @@ namespace CodeAgentsTeam3.tests
             var viewResult = Assert.IsType<HttpNotFoundResult>(result);
             Assert.NotNull(viewResult);
         }
+
+
+        //[Fact]
+        //public void CodeAgentsTeam3_Add()
+        //{
+        //    var dbContext = _serviceProvider.GetRequiredService<ApplicationDbContext>();
+        //    var controller = new ProfilesController(dbContext);
+        //    var result = controller.Add(3,4);
+        //    var viewResult = Assert.IsType<HttpNotFoundResult>(result);
+        //    Assert.NotNull(viewResult);
+        //}
+
     }
 
 }

@@ -58,6 +58,16 @@ namespace CodeAgentsTeam3.tests
             Assert.NotNull(viewResult);
         }
 
+        [Fact]
+        public void CodeAgentsTeam3_UpdateView()
+        {
+            var dbContext = _serviceProvider.GetRequiredService<ApplicationDbContext>();
+            var controller = new ProfilesController(dbContext);
+            var result = controller.Create();
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.Null(viewResult.ViewName);
+            Assert.NotNull(viewResult.ViewData);
+        }
 
         //[Fact]
         //public void CodeAgentsTeam3_Add()

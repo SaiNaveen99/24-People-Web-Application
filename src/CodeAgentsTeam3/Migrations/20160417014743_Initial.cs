@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace CodeAgentsTeam3.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

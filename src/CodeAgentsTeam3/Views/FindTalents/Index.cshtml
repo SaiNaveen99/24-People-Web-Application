@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<CodeAgentsTeam3.Models.FindTalent>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +82,8 @@
                     <div class="row">
                         <div class="col-sm-2">
                             @*<img src="~/lib/bootstrap/dist/images/defaultuser.png" /><br />*@
-                            <img src="@Html.DisplayFor(modelItem => item.Image)" /><br />
+                            <img src="@Html.DisplayFor(modelItem => item.Image)" class="img-responsive" alt="FindTalent Profile">
+                            <br />
                         </div>
                         <div class="col-md-4">
                             <p>First Name: @Html.DisplayFor(modelItem => item.FirstName) </p>

@@ -1,0 +1,128 @@
+@model CodeAgentsTeam3.Models.Director
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Director</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Age" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ethinicity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Ethinicity" class="form-control" />
+                <span asp-validation-for="Ethinicity" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Experience" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Experience" class="form-control" />
+                <span asp-validation-for="Experience" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Eyes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Eyes" class="form-control" />
+                <span asp-validation-for="Eyes" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Hair" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Hair" class="form-control" />
+                <span asp-validation-for="Hair" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Height" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Height" class="form-control" />
+                <span asp-validation-for="Height" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NativeLanguage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NativeLanguage" class="form-control" />
+                <span asp-validation-for="NativeLanguage" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Remuneration" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Remuneration" class="form-control" />
+                <span asp-validation-for="Remuneration" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Sex" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Sex" class="form-control" />
+                <span asp-validation-for="Sex" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Weight" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="mail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="mail" class="form-control" />
+                <span asp-validation-for="mail" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

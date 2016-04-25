@@ -43,7 +43,11 @@
   },
 
   "frameworks": {
-    "dnx451": { },
+    "dnx451": {
+      "dependencies": {
+        "Hasseware.TheMovieDB": "1.2.6"
+      }
+    },
     "dnxcore50": { }
   },
 

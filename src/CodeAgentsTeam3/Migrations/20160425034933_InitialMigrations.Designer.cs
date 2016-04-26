@@ -8,8 +8,8 @@ using CodeAgentsTeam3.Models;
 namespace CodeAgentsTeam3.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160418182206_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20160425034933_InitialMigrations")]
+    partial class InitialMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -342,6 +342,8 @@ namespace CodeAgentsTeam3.Migrations
                     b.Property<string>("Remuneration");
 
                     b.Property<string>("Weight");
+
+                    b.Property<string>("imagePath");
 
                     b.Property<string>("mail");
 

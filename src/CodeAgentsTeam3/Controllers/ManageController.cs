@@ -10,30 +10,41 @@ using Microsoft.Extensions.Logging;
 using CodeAgentsTeam3.Models;
 using CodeAgentsTeam3.Services;
 using CodeAgentsTeam3.ViewModels.Manage;
+using Microsoft.AspNet.Http;
+using Microsoft.Net.Http.Headers;
+using System.IO;
+using Microsoft.AspNet.Hosting;
 
 namespace CodeAgentsTeam3.Controllers
 {
     [Authorize]
     public class ManageController : Controller
     {
+        private readonly IHostingEnvironment _hostingEnvironment;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+        private ApplicationDbContext _context;
+
 
         public ManageController(
         UserManager<ApplicationUser> userManager,
         SignInManager<ApplicationUser> signInManager,
         IEmailSender emailSender,
         ISmsSender smsSender,
-        ILoggerFactory loggerFactory)
+        ILoggerFactory loggerFactory,
+        ApplicationDbContext context,
+        IHostingEnvironment hostingEnvironment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<ManageController>();
+            _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         //
@@ -59,8 +70,48 @@ namespace CodeAgentsTeam3.Controllers
                 Logins = await _userManager.GetLoginsAsync(user),
                 BrowserRemembered = await _signInManager.IsTwoFactorClientRememberedAsync(user)
             };
-            return View(model);
+
+            var profile = _context.profiles.Single(m=>m.Email == User.GetUserName());
+
+
+            return View(profile);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(Profile profile,IFormFile ProfileImage)
+        {
+            var uProfile = _context.profiles.Single(m => m.Email == User.GetUserName());
+            if (ProfileImage != null && ProfileImage.Length > 0)
+            {
+                var parsedContentDisposition = ContentDispositionHeaderValue.Parse(ProfileImage.ContentDisposition);
+                string FilePath = parsedContentDisposition.FileName.Trim('"');
+                string FileExtension = Path.GetExtension(FilePath);
+                var uploadDir = _hostingEnvironment.WebRootPath + $@"\Uploads\Images\";
+                if (!Directory.Exists(uploadDir))
+                {
+                    Directory.CreateDirectory(uploadDir);
+                }
+                var imageUrl = uploadDir + Path.GetFileName(FilePath);
+                var savePath = $@"Uploads\Images\"+Path.GetFileName(FilePath);
+                _context.profiles.Remove(uProfile);
+                _context.SaveChanges();
+            
+                ProfileImage.SaveAs(imageUrl);
+                profile.imagePath = savePath;
+                
+                _context.profiles.Add(profile);
+                _context.SaveChanges();
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("================================");
+                System.Diagnostics.Debug.WriteLine("Null in image");
+            }
+            return RedirectToAction("Index");
+        }
+
+
 
         //
         // POST: /Manage/RemoveLogin

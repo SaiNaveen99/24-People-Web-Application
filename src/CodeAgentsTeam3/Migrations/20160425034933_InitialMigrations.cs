@@ -5,7 +5,7 @@ using Microsoft.Data.Entity.Metadata;
 
 namespace CodeAgentsTeam3.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialMigrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -215,6 +215,7 @@ namespace CodeAgentsTeam3.Migrations
                     NativeLanguage = table.Column<string>(nullable: true),
                     Remuneration = table.Column<string>(nullable: true),
                     Weight = table.Column<string>(nullable: true),
+                    imagePath = table.Column<string>(nullable: true),
                     mail = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

@@ -32,10 +32,8 @@ namespace CodeAgentsTeam3.Models
 
         //public List<Fli>
 
-        [RegularExpression("(?< ![-.])\b[0 - 9] +\b(?!.[0 - 9])", ErrorMessage = "Should contain only Integers.")]
         public string Experience { get; set; }
 
-        [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Should contain only Strings.")]
         [Display(Name = "Native Language")]
         public string NativeLanguage { get; set; }
 
@@ -49,16 +47,15 @@ namespace CodeAgentsTeam3.Models
         public string Weight { get; set; }
 
         [Display(Name = "Expected Remuneration")]
-        [RegularExpression("(?< ![-.])\b[0 - 9] +\b(?!.[0 - 9])", ErrorMessage = "Should contain only Integers.")]
-        public string Remuneration { get; set; }
+         public string Remuneration { get; set; }
 
         //Work experience within 500 characters
         [Display(Name = "Description about yourself")]
-        [RegularExpression(@"^[a-zA-Z”-‘\s]{1,500}$")]
         public string Description { get; set; }
 
         [Display(Name = "Email -ID")]
-        [RegularExpression("\b[A - Z0 - 9._ % +-] +@[A-Z0-9.-]+.[A-Z]{2,}\b)")]
         public string mail { get; set; }
+
+         public string imagePath { get; set; }
     }
 }

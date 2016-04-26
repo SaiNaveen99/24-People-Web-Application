@@ -342,6 +342,8 @@ namespace CodeAgentsTeam3.Migrations
 
                     b.Property<string>("Weight");
 
+                    b.Property<string>("imagePath");
+
                     b.Property<string>("mail");
 
                     b.HasKey("ProfileID");
